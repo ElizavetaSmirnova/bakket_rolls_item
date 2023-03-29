@@ -2,6 +2,7 @@
 
 const cartWrapper = document.querySelector('.cart-wrapper');
 
+
 window.addEventListener('click', function(evt){
 
     if(evt.target.hasAttribute('data-cart')){
@@ -20,9 +21,12 @@ window.addEventListener('click', function(evt){
         const itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`)
 
         if(itemInCart){
+
             const counterElement = itemInCart.querySelector('[data-counter]')
             counterElement.innerText = parseInt(counterElement.innerHTML) + parseInt(productInfo.counter)
+
         } else{
+
             const cartItemHTML = `<div class="cart-item" data-id="${productInfo.id}">
             <div class="cart-item__top">
                 <div class="cart-item__img">
@@ -50,12 +54,14 @@ window.addEventListener('click', function(evt){
                 </div>
             </div>
                                 </div>`;
-                                cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
+            
+            cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
+
         }
 
         card.querySelector('[data-counter]').innerText = '1';
-       
+        
 
- 
+         toggleCartStatus();
     }
 });
