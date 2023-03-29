@@ -27,11 +27,19 @@ window.addEventListener('click', function (evt) {
             evt.target.closest('.cart-item').remove();
 
             toggleCartStatus();
+            
+            calcCartPrice();
 
         } else {
 
             counter.innerText = 1;
 
-        }
-    }
+		}
+
+	}
+
+	if (evt.target.hasAttribute('data-action') && evt.target.closest('.cart-wrapper')) {
+		
+		calcCartPrice()
+	}
 })

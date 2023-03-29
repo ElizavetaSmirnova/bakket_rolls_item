@@ -63,5 +63,7 @@ window.addEventListener('click', function(evt){
         
 
          toggleCartStatus();
+
+         calcCartPrice();
     }
 });
